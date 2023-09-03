@@ -1,0 +1,107 @@
+@use "./breakpoints.scss";
+@use "./colors.scss";
+
+@mixin flex($flex-direction,$justify-content,$align-items:center){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin typography($font-size:15px,$color:#737373,$font-weight:200){
+    font-size: $font-size;
+    color:$color;
+    font-weight: $font-weight;
+}
+
+@mixin sm-md-screen{
+    @media only screen and (max-width:breakpoints.$md){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media only screen and (min-width:(breakpoints.$sm+1px)) and (max-width:breakoutpoints.$md){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and (min-width:(breakpoints.$md+1px)){
+        @content;
+    }
+}
+
+@mixin lg-screen{
+    @media only screen and (min-width:(breakpoints.$md+1px)){
+        @content;
+    }
+};
+
+@mixin title-lg{
+    font-size: 48px;
+    font-weight: 500;
+    padding-left: 10px;
+    border-left: 30px solid colors.$secondary-color;
+    
+    color: colors.$header-color;
+}
+
+@mixin title-sm{
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0px 20px;
+    border-bottom: 2px solid ;
+    border-image: linear-gradient(90deg, colors.$secondary-color 0%,white 100%) 2 2 2 2;
+    margin: 50px 0px;
+    color: colors.$header-color;
+}
+
+@mixin placeholder{
+    font-size: 1.25em;
+    font-weight:200;
+    color: colors.$placeholder-color;
+}
+
+@mixin button{
+    margin-top: 30px;
+    padding: 0.8em 2.1em;
+    border: 1px solid colors.$secondary-color;
+    background-color: colors.$secondary-color;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px -8px rgba(0,0,0,.22);
+    cursor: pointer;
+}
+
+@mixin input($width){
+    width: $width;
+    border: solid 1px rgba(114,132,167,0.149);
+    border-radius: 0.5rem;
+    background-color:colors.$background-color;
+    padding: 0.5rem 1.5rem;
+}
+
+@mixin list{
+    list-style: none;
+        li{
+            margin-bottom:30px;
+            a{
+                text-decoration: none;
+            }
+        }
+}
+
+@mixin skill-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100px;
+    width: 70px;
+    background-color: colors.$skill-color;
+    box-shadow: 0 10px 10px -8px rgba(0,0,0,.22);
+    padding: 25px;
+}
+
