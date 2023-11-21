@@ -264,17 +264,22 @@ header{
     @include mixins.lg-screen{
         &__content{
             @include mixins.flex(row,center);
+            gap: 30px;
             &__item{
-                width: 30%;
+                width: 350px;
+                height: 210px;
+                overflow: hidden;
+                border-radius: 10px;
                 &__link{
                     
                     opacity: 1;
                     &--img{
                         width: 100%;
+                        
                     }
                     
                     :hover{
-                        opacity: 0.2;
+                        opacity: 0.8;
                         transition: 0.3s;
                         
                     }
