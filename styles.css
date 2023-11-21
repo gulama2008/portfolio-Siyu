@@ -317,9 +317,13 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 30px;
   }
   .section--projects__content__item {
-    width: 30%;
+    width: 350px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 10px;
   }
   .section--projects__content__item__link {
     opacity: 1;
@@ -328,7 +332,7 @@ header {
     width: 100%;
   }
   .section--projects__content__item__link :hover {
-    opacity: 0.2;
+    opacity: 0.8;
     transition: 0.3s;
   }
 }
