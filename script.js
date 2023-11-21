@@ -29,12 +29,7 @@ function resizeWindow() {
 }
 window.addEventListener("resize", resizeWindow);
 
-// function clickOnPage() {
-//   menu.style.display = 'none';
-// }
-// body.addEventListener('click', clickOnPage);
-function sendMessage(event) {
-  // event.preventDefault();
+function sendMessage() {
   alert(
     "Thank you for sending me a message. I will get in touch with you as soon as possible."
   );
