@@ -34,7 +34,7 @@ window.addEventListener("resize", resizeWindow);
 // }
 // body.addEventListener('click', clickOnPage);
 function sendMessage(event) {
-  event.preventDefault();
+  // event.preventDefault();
   alert(
     "Thank you for sending me a message. I will get in touch with you as soon as possible."
   );
