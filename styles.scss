@@ -1,19 +1,18 @@
 @use "./partials/mixins.scss";
 @use "./partials/colors.scss";
 
-*{
-    margin: 0px;
-    // padding: 0px;
-    font-family: 'Inter', sans-serif;
-    color: colors.$main-color;
-    
+* {
+  margin: 0px;
+  // padding: 0px;
+  font-family: "Inter", sans-serif;
+  color: colors.$main-color;
 }
 
-body{
-    margin-bottom: 0px;
+body {
+  margin-bottom: 0px;
 }
-main{
-    background-color: colors.$background-color;
+main {
+  background-color: colors.$background-color;
 }
 
 .loadin {
@@ -28,388 +27,402 @@ main{
   }
 }
 
-header{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 9999;
-    background-color: white;
-    width: 100%;
-    height: 80px;
-    margin-bottom: 0px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 0px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 }
-.navbar{
-    @include mixins.flex(row,space-between);
-    height: 80px;
-    &__logo{
-        height: 80%;
-        padding-left: 20px;
-        @include mixins.flex(row,space-between,center);
-        &--img{
-            height: 60%;
-        }
-        &--fname{
-            margin-left: 5px;
-            font-weight: 600;
-            color: colors.$header-color;
-        }
-        &--lname{
-            margin-left: 5px;
-            font-weight: 400;
-        }
+.navbar {
+  @include mixins.flex(row, space-between);
+  height: 80px;
+  &__logo {
+    height: 80%;
+    padding-left: 20px;
+    @include mixins.flex(row, space-between, center);
+    &--img {
+      height: 60%;
     }
-    
-    @include mixins.lg-screen{
-        &__menu{
-            padding-right: 100px;
-            &--sm{
-                display: none;
-            }
-            &__list{
-                @include mixins.flex(row,space-between);
-                gap: 30px;
-                list-style: none;
-                &__item{
-                    :hover{
-                        color: colors.$main-color;
-                    }
-                    &__link{
-                        text-decoration: none;
-                        color: colors.$secondary-color;
-                        white-space: nowrap;
-                    }
-                }
-            }
-        }
+    &--fname {
+      margin-left: 5px;
+      font-weight: 600;
+      color: colors.$header-color;
     }
+    &--lname {
+      margin-left: 5px;
+      font-weight: 400;
+    }
+  }
 
-    @include mixins.sm-md-screen{
-        &__menu{
-            padding-right: 50px;
-            &--lg{
-                display: none;
-            }
-            &__hb{
-                border: 1px solid colors.$secondary-color;
-                border-radius: 5px;
-                padding: 5px;
-                cursor: pointer;
-            }
-        }
-    }
-}
-.navbar__menu__list--sm{
-    @include mixins.sm-md-screen{
+  @include mixins.lg-screen {
+    &__menu {
+      padding-right: 100px;
+      &--sm {
         display: none;
-        margin-top: 0px;
-        padding-bottom: 10px;
-        padding-right: 50px;
-        background-color: white;
-        transition-property: display;
-        transition-duration: 2s;
-        transition-delay: 1s;
-        // @include mixins.list;
-        &__item{
-            text-align: right;
-            list-style: none;
-            // margin-top: 0px;
-            margin-bottom: 20px;
-            :hover{
-                color: colors.$main-color;
-            }
-            &__link{
-                text-decoration: none;
-                color:colors.$secondary-color ;
-                white-space: nowrap;
-            }
+      }
+      &__list {
+        @include mixins.flex(row, space-between);
+        gap: 30px;
+        list-style: none;
+        &__item {
+          :hover {
+            color: colors.$main-color;
+          }
+          &__link {
+            text-decoration: none;
+            color: colors.$secondary-color;
+            white-space: nowrap;
+          }
         }
+      }
     }
-    @include mixins.lg-screen{
+  }
+
+  @include mixins.sm-md-screen {
+    &__menu {
+      padding-right: 50px;
+      &--lg {
         display: none;
-    }            
+      }
+      &__hb {
+        border: 1px solid colors.$secondary-color;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+  }
 }
-
-
-.section--about-me{
-    background-color: colors.$background-color;
-    margin-top: 80px;
-    &__text{
-            &--title{
-                margin-bottom: 10px;
-                @include mixins.typography(14px,colors.$secondary-color,300);
-            }
-            &--name{
-                margin-top: 0px;
-                margin-bottom: 10px;
-                @include mixins.typography(48px,colors.$header-color,600);
-            }
-    }
-    &__img{
-        width: 50%;
-        height: 100%;
-        padding-top:5%;
-        &>img{
-            width: 50%;
-            border: 1px solid colors.$background-color;
-            border-radius: 50%;
-        }
-    }
-
-    @include mixins.lg-screen{
-        @include mixins.flex(row,center,flex-start);
-        height: 100%;
-        width: 100%;
-        background-color: colors.$background-color;
-        &__text{
-            width: 50%;
-            padding: 5%;
-            &--content{
-                @include mixins.typography(15px,colors.$main-color,200);
-                line-height: 1.75;
-            }
-        }
-    }
-
-    @include mixins.sm-md-screen{
-        @include mixins.flex(column-reverse,center,flex-start);
-        
-        padding:5%;
-        &__text{
-            &--content{
-                @include mixins.typography(14px,colors.$main-color,300);
-                line-height: 2;
-            }
-        }
-        
-    }
-
-    
-}
-
-.section{
-    @include mixins.lg-screen{
-        margin-top: 70px;
-        padding: 0px 15%;
-        &__title{
-            @include mixins.title-lg;
-            margin-bottom: 10px;
-        }
-        &__content{
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-    }
-
-    @include mixins.sm-md-screen{
-        @include mixins.flex(column,flex-start,center);
-        margin-top: 20px;
-        padding: 0px 5%;
-        &__title{
-            @include mixins.title-sm;
-        }
-        &__content{
-            @include mixins.flex(column,flex-start,center);
-        }
-    }
-    
-}
-
-.section--skills{
-    @include mixins.lg-screen{
-        &__content{
-            @include mixins.flex(row,flex-start);
-            &__item{
-                @include mixins.skill-card;
-                &--name{
-                    margin: 5px 0px;
-                }
-                img{
-                    width: 50px;
-                    height: 50px
-                }
-            }
-        }  
-    }
-
-    @include mixins.sm-md-screen{
-        &__content{
-            @include mixins.flex(row,center);
-            flex-wrap: wrap;
-            gap: 20px;
-            &__item{
-                @include mixins.skill-card;
-                width: 30%;
-                &--name{
-                    margin: 5px 0px;
-                }
-            }
-        }  
-    }
-}
-
-
-.btn{
-    @include mixins.button;
-    a{
-        text-decoration: none;
-        color: white;
-        padding: 0px;
-        box-shadow: none;
-    }
-}
-
-.section--projects{
-    
-    @include mixins.lg-screen{
-        &__content{
-            @include mixins.flex(row,center);
-            gap: 30px;
-            &__item{
-                width: 350px;
-                height: 210px;
-                overflow: hidden;
-                border-radius: 10px;
-                &__link{
-                    
-                    opacity: 1;
-                    &--img{
-                        width: 100%;
-                        
-                    }
-                    
-                    :hover{
-                        opacity: 0.8;
-                        transition: 0.3s;
-                        
-                    }
-                }
-                
-            }
-        }
-    }
-
-    @include mixins.sm-md-screen{
-        &__content{
-            @include mixins.flex(column,center);
-            &__item{
-                width: 95%;
-                &__link{
-                    &--img{
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.section--contact{
-    @include mixins.lg-screen{
-        &__content{
-            padding: 10%;
-            @include mixins.flex(row,center);
-            flex-wrap: nowrap;
-            // background-color: colors.$contact-color;
-            &__item{
-                width: 50%;
-                &--list{
-                    width: 100%;
-                    padding-left: 0px;
-                    @include mixins.list;
-                    
-                    &--subtitle{
-                        @include mixins.typography(1.125,colors.$main-color,200);
-                        line-height: 2;
-                        margin-top: 0px;
-                    }
-                }
-                &--form{
-                    width: 100%;
-                    @include mixins.flex(column,flex-start,flex-start);
-                    gap: 20px;
-                    input{
-                        height: 40px;
-                    }
-                    input,textarea{
-                        @include mixins.input(95%);
-                    }
-                    ::placeholder{
-                            @include mixins.placeholder;
-                        }
-                }
-            }
-        }
-    }
-
-    @include mixins.sm-md-screen{
-        padding: 5%;
-        // padding-bottom: 5%;
-        background-color: colors.$background-color;
-        &__content{
-            &__item{
-                width: 95%;
-                &--list{
-                    padding: 0px;
-                    @include mixins.list;
-                    &--subtitle{
-                        @include mixins.typography(1.125,colors.$main-color,200);
-                        line-height: 2;
-                        margin-top: 0px;
-                    }
-                }
-                &--form{
-                    @include mixins.flex(column,flex-start,flex-start);
-                    gap: 20px;
-                    input{
-                        height: 30px;
-                    }
-                    input,textarea{
-                        @include mixins.input(85%);
-                    }
-                    ::placeholder{
-                        @include mixins.placeholder;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.footer{
-    height: 40px;
-    @include mixins.flex(row,center,center);
-    background-color: #C0b5f1;
-    
-    &__content{
-        @include mixins.typography(14px,white,300);
-    }
-}
-
-.section--projects__content__item__link{
-    display: block;
-    position: relative;
-}
-
-.section--projects__content__item__link--details{
+.navbar__menu__list--sm {
+  @include mixins.sm-md-screen {
     display: none;
-    &--title{
+    margin-top: 0px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    background-color: white;
+    transition-property: display;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    // @include mixins.list;
+    &__item {
+      text-align: right;
+      list-style: none;
+      // margin-top: 0px;
+      margin-bottom: 20px;
+      :hover {
+        color: colors.$main-color;
+      }
+      &__link {
+        text-decoration: none;
         color: colors.$secondary-color;
+        white-space: nowrap;
+      }
     }
-    &--subtitle{
-        color: colors.$secondary-color;
-    }
+  }
+  @include mixins.lg-screen {
+    display: none;
+  }
 }
 
-.section--projects__content__item__link:hover .section--projects__content__item__link--details{
-    display:block;
-    position:absolute;
-    top: 50px;
-    left:50px;
-    color:colors.$secondary-color;
-    transition: 0.6s;
+.section--about-me {
+  background-color: colors.$background-color;
+  margin-top: 80px;
+  &__text {
+    &--title {
+      margin-bottom: 10px;
+      @include mixins.typography(14px, colors.$secondary-color, 300);
+    }
+    &--name {
+      margin-top: 0px;
+      margin-bottom: 10px;
+      @include mixins.typography(48px, colors.$header-color, 600);
+    }
+  }
+  &__img {
+    width: 50%;
+    height: 100%;
+    padding-top: 5%;
+    & > img {
+      width: 50%;
+      border: 1px solid colors.$background-color;
+      border-radius: 50%;
+    }
+  }
+
+  @include mixins.lg-screen {
+    @include mixins.flex(row, center, flex-start);
+    height: 100%;
+    width: 100%;
+    background-color: colors.$background-color;
+    &__text {
+      width: 50%;
+      padding: 5%;
+      &--content {
+        @include mixins.typography(15px, colors.$main-color, 200);
+        line-height: 1.75;
+      }
+    }
+  }
+
+  @include mixins.sm-md-screen {
+    @include mixins.flex(column-reverse, center, flex-start);
+
+    padding: 5%;
+    &__text {
+      &--content {
+        @include mixins.typography(14px, colors.$main-color, 300);
+        line-height: 2;
+      }
+    }
+  }
 }
 
-.section--projects__content__item__link--details:hover ~ .section--projects__content__item__link{
-    opacity: 0.2;
+.section {
+  @include mixins.lg-screen {
+    margin-top: 70px;
+    padding: 0px 15%;
+    &__title {
+      @include mixins.title-lg;
+      margin-bottom: 10px;
+    }
+    &__content {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+
+  @include mixins.sm-md-screen {
+    @include mixins.flex(column, flex-start, center);
+    margin-top: 20px;
+    padding: 0px 5%;
+    &__title {
+      @include mixins.title-sm;
+    }
+    &__content {
+      @include mixins.flex(column, flex-start, center);
+    }
+  }
+}
+
+.section--skills {
+  @include mixins.lg-screen {
+    &__content {
+      @include mixins.flex(row, flex-start);
+      &__item {
+        @include mixins.skill-card;
+        &--name {
+          margin: 5px 0px;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  @include mixins.sm-md-screen {
+    &__content {
+      @include mixins.flex(row, center);
+      flex-wrap: wrap;
+      gap: 20px;
+      &__item {
+        @include mixins.skill-card;
+        width: 30%;
+        &--name {
+          margin: 5px 0px;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  @include mixins.button;
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 0px;
+    box-shadow: none;
+  }
+}
+
+.section--projects {
+  @include mixins.lg-screen {
+    &__content {
+      @include mixins.flex(row, center);
+      gap: 60px;
+      &__item {
+        &__link {
+          width: 350px;
+          height: 210px;
+          overflow: hidden;
+          border-radius: 10px;
+          opacity: 1;
+          &--img {
+            width: 100%;
+          }
+
+          :hover {
+            opacity: 0.8;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  @include mixins.sm-md-screen {
+    &__content {
+      @include mixins.flex(column, center);
+      gap: 20px;
+      &__item {
+        width: 95%;
+        &__link {
+            width: 350px;
+          height: 210px;
+          overflow: hidden;
+          &--img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.project_img {
+  border-radius: 10px;
+}
+.project_details {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project_name{
+    color: #8b77ed;
+    font-weight: 600
+}
+.project_github{
+    margin-right: 5px;
+}
+
+.section--contact {
+  @include mixins.lg-screen {
+    &__content {
+      padding: 10%;
+      @include mixins.flex(row, center);
+      flex-wrap: nowrap;
+      // background-color: colors.$contact-color;
+      &__item {
+        width: 50%;
+        &--list {
+          width: 100%;
+          padding-left: 0px;
+          @include mixins.list;
+
+          &--subtitle {
+            @include mixins.typography(1.125, colors.$main-color, 200);
+            line-height: 2;
+            margin-top: 0px;
+          }
+        }
+        &--form {
+          width: 100%;
+          @include mixins.flex(column, flex-start, flex-start);
+          gap: 20px;
+          input {
+            height: 40px;
+          }
+          input,
+          textarea {
+            @include mixins.input(95%);
+          }
+          ::placeholder {
+            @include mixins.placeholder;
+          }
+        }
+      }
+    }
+  }
+
+  @include mixins.sm-md-screen {
+    padding: 5%;
+    // padding-bottom: 5%;
+    background-color: colors.$background-color;
+    &__content {
+      &__item {
+        width: 95%;
+        &--list {
+          padding: 0px;
+          @include mixins.list;
+          &--subtitle {
+            @include mixins.typography(1.125, colors.$main-color, 200);
+            line-height: 2;
+            margin-top: 0px;
+          }
+        }
+        &--form {
+          @include mixins.flex(column, flex-start, flex-start);
+          gap: 20px;
+          input {
+            height: 30px;
+          }
+          input,
+          textarea {
+            @include mixins.input(85%);
+          }
+          ::placeholder {
+            @include mixins.placeholder;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  height: 40px;
+  @include mixins.flex(row, center, center);
+  background-color: #c0b5f1;
+
+  &__content {
+    @include mixins.typography(14px, white, 300);
+  }
+}
+
+.section--projects__content__item__link {
+  display: block;
+  position: relative;
+}
+
+.section--projects__content__item__link--details {
+  display: none;
+  &--title {
+    color: colors.$secondary-color;
+  }
+  &--subtitle {
+    color: colors.$secondary-color;
+  }
+}
+
+.section--projects__content__item__link:hover
+  .section--projects__content__item__link--details {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: colors.$secondary-color;
+  transition: 0.6s;
+}
+
+.section--projects__content__item__link--details:hover
+  ~ .section--projects__content__item__link {
+  opacity: 0.2;
 }
