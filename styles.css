@@ -317,15 +317,13 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
   }
-  .section--projects__content__item {
+  .section--projects__content__item__link {
     width: 350px;
     height: 210px;
     overflow: hidden;
     border-radius: 10px;
-  }
-  .section--projects__content__item__link {
     opacity: 1;
   }
   .section--projects__content__item__link--img {
@@ -342,13 +340,39 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
   .section--projects__content__item {
     width: 95%;
   }
+  .section--projects__content__item__link {
+    width: 350px;
+    height: 210px;
+    overflow: hidden;
+  }
   .section--projects__content__item__link--img {
     width: 100%;
   }
+}
+
+.project_img {
+  border-radius: 10px;
+}
+
+.project_details {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project_name {
+  color: #8b77ed;
+  font-weight: 600;
+}
+
+.project_github {
+  margin-right: 5px;
 }
 
 @media only screen and (min-width: 769px) {
@@ -392,7 +416,8 @@ header {
   .section--contact__content__item--form input {
     height: 40px;
   }
-  .section--contact__content__item--form input, .section--contact__content__item--form textarea {
+  .section--contact__content__item--form input,
+  .section--contact__content__item--form textarea {
     width: 95%;
     border: solid 1px rgba(114, 132, 167, 0.149);
     border-radius: 0.5rem;
@@ -440,7 +465,8 @@ header {
   .section--contact__content__item--form input {
     height: 30px;
   }
-  .section--contact__content__item--form input, .section--contact__content__item--form textarea {
+  .section--contact__content__item--form input,
+  .section--contact__content__item--form textarea {
     width: 85%;
     border: solid 1px rgba(114, 132, 167, 0.149);
     border-radius: 0.5rem;
@@ -460,7 +486,7 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #C0b5f1;
+  background-color: #c0b5f1;
 }
 .footer__content {
   font-size: 14px;
